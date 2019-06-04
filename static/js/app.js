@@ -106,8 +106,8 @@ function returnData(e) {
         var chartGroup = svg.append("g")
           .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-        var y_domain_max = (d3.max(Y_Axis_DFF_Data)*1.5).toFixed(3);
-        var y_domain_min = (d3.max(Y_Axis_DFF_Data)/7).toFixed(3);
+        var y_domain_max = (d3.max(Y_Axis_DFF_Data) * 1.5).toFixed(3);
+        var y_domain_min = (d3.max(Y_Axis_DFF_Data) / 7).toFixed(3);
 
         // scale y to chart height
         var yScale = d3.scaleLinear()
@@ -145,7 +145,6 @@ function returnData(e) {
           .attr("cx", (d, i) => xScale(X_Axis_Date_Data[i]) + 55)
           .attr("cy", d => yScale(d))
           .attr("r", 6)
-          // .attr("height", d => chartHeight - yScale(d))
           .attr("fill", "teal")
 
         // Add the text label for the Y axis
@@ -232,13 +231,12 @@ function returnData(e) {
           .attr("y", d => yScale2(d))
           .attr("width", xScale2.bandwidth())
           .attr("height", d => chartHeight2 - yScale2(d))
-          // .attr("height", d => chartHeight - yScale2(d))
           .attr("fill", "teal")
           // event listener for onclick event
           .on("click", function (d, i) {
-            alert(`DFF: ${Y_Axis_DFF_Data2}`);
+            alert(`DFF: ${Y_Axis_DFF_Data2}`)
           })
-          
+
 
         // Add the text label for the Y axis
         chartGroup2.append("text")
@@ -246,7 +244,6 @@ function returnData(e) {
           .attr("y", 0 - margin2.left)
           .attr("x", 0 - (chartHeight2 / 2))
           .attr("dy", "1em")
-          .style("fill", "black")
           .style("text-anchor", "middle")
           .text("Probability (%)");
 
@@ -254,9 +251,8 @@ function returnData(e) {
         chartGroup2.append("text")
           .attr("transform", "translate(" + (chartWidth2 / 2) + " ," + ((chartHeight2 - 5) + margin2.bottom) + ")")
           .style("text-anchor", "middle")
-          .style("fill", "black")
-          .text("Model Prediction");
-      }
+          .text("Prediction");
+    }
       makeResponsive();
     })
 }
@@ -368,7 +364,6 @@ function returnData(e) {
   });
 
   // Configure a time scale
-  // d3.extent returns the an array containing the min and max values for the property specified
   const xTimeScale = d3.scaleTime()
     .domain(d3.extent(data, d => d.date))
     .range([0, chartWidth]);
@@ -379,7 +374,7 @@ function returnData(e) {
     .range([chartHeight, 0]);
 
   // Create two new functions passing the scales in as arguments
-  // These will be used to create the chart's axes
+  // These will be used to create the chart's axi
   const bottomAxis = d3.axisBottom(xTimeScale);
   const leftAxis = d3.axisLeft(yLinearScale);
 
@@ -387,12 +382,14 @@ function returnData(e) {
   var drawLine = d3.line()
     .x(data => xTimeScale(data.date))
     .y(data => yLinearScale(data.value))
-  // create the line path
+
+  // Create the line path
   var path = chartGroup.append('path')
     .attr('d', drawLine(data))
     .attr('stroke', 'teal')
     .attr('stroke-width', 4)
     .attr('fill', 'none')
+
   // Add a curtain to hide the chart until transition
   var curtain = chartGroup.append('rect')
     .attr('x', -1 * chartWidth)
@@ -419,6 +416,7 @@ function returnData(e) {
     .attr("transform", `translate(0, ${chartHeight})`)
     .call(bottomAxis);
 
+  // Add the text label for the y axis
   chartGroup.append("text")
     .attr("transform", "rotate(-90)")
     .attr("y", 0 - margin.left)
@@ -433,4 +431,9 @@ function returnData(e) {
     .style("text-anchor", "middle")
     .text("Year");
 
+  // Add recession point of interest 
+  chartGroup.append("text")
+    .attr("transform", "translate(" + (chartWidth / 2) + " ," + ((chartHeight - 235) + margin.bottom) + ")")
+    .style("text-anchor", "middle")
+    .text("< Recession Begins")
 })()
