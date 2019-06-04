@@ -1,5 +1,6 @@
 # Economic Indicators Influence on Interest Rates
-
+#### *Disclaimer* 
+This was a group project with contributions by Zeyu, Jesse and myself. Please visit the original repo at https://github.com/DataNoob0723/interest_rate_analysis for the original commits and links to my team members pages.
 ## Overview:
 This is a project to investigate how certain measures of the economy may or may not influence the fed rate changing.
 

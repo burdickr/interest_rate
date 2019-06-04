@@ -238,6 +238,7 @@ function returnData(e) {
           .on("click", function (d, i) {
             alert(`DFF: ${Y_Axis_DFF_Data2}`);
           })
+          
 
         // Add the text label for the Y axis
         chartGroup2.append("text")
@@ -245,6 +246,7 @@ function returnData(e) {
           .attr("y", 0 - margin2.left)
           .attr("x", 0 - (chartHeight2 / 2))
           .attr("dy", "1em")
+          .style("fill", "black")
           .style("text-anchor", "middle")
           .text("Probability (%)");
 
@@ -252,6 +254,7 @@ function returnData(e) {
         chartGroup2.append("text")
           .attr("transform", "translate(" + (chartWidth2 / 2) + " ," + ((chartHeight2 - 5) + margin2.bottom) + ")")
           .style("text-anchor", "middle")
+          .style("fill", "black")
           .text("Model Prediction");
       }
       makeResponsive();
