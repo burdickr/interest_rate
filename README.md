@@ -37,6 +37,10 @@ The user will be able to choose from a list of metrics which will change the vis
 Data will be extracted from quandl<br>
 https://www.quandl.com/data/FRED-Federal-Reserve-Economic-Data/documentation
 
+### Conclusion:
+
+![Web Page Conclusion Section](images/conclusion_area.PNG)
+
 ### Deploy:
 We anticipate deploying our app to google cloud over time
 
