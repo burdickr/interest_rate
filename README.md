@@ -4,7 +4,7 @@ This was a group project with contributions by Zeyu, Jesse and myself. Please vi
 
 ## The Working App 
 
-![Interest Rate Prediction Demo](images/exampleRun.gif)
+![Interest Rate Prediction Demo](images/example_app.gif)
 
 ## Overview:
 This is a project to investigate how certain measures of the economy may or may not influence the fed rate changing.
