@@ -1,11 +1,16 @@
 # Economic Indicators Influence on Interest Rates
 #### *Disclaimer* 
 This was a group project with contributions by Zeyu, Jesse and myself. Please visit the original repo at https://github.com/DataNoob0723/interest_rate_analysis for the original commits and links to my team members pages.
+
+## The Working App 
+
+![Interest Rate Prediction Demo](images/exampleRun.gif)
+
 ## Overview:
 This is a project to investigate how certain measures of the economy may or may not influence the fed rate changing.
 
 ### Scope: 
-We will build a model to predict whether the chosen 49 metrics can predict whether the interst rate will go up, down, or 
+We will build a model to predict whether the chosen 48 metrics can predict whether the interst rate will go up, down, or 
 go unchanged. We will utilize D3 to allow user interaction on our charts.
 The user will be able to choose from a list of metrics which will change the visualization in real time.
 
@@ -33,20 +38,5 @@ Data will be extracted from quandl<br>
 https://www.quandl.com/data/FRED-Federal-Reserve-Economic-Data/documentation
 
 ### Deploy:
-We anticipate deploying our app to Heroku
+We anticipate deploying our app to google cloud over time
 
-### Steps to duplicate our Project:
-
-1. Retrieve data from Quandl. The easiest route to obtain this data into CSV format is to install the Quandl Plug-in for 
-Microsoft Excel and add each metric from the Quandl Documentation page for FRED to the worksheet. Once the data has been 
-pulled from Quandl into excel you can save the document as CSV for easy manipulation in Python 
-
-2. In python you can clean up the data by using the Pandas Package to remove extra date columns, fill null values, and drop n/a values as necessary. 
-
-3. Setting up the models 
-
-4. Putting model output into API and database for front-end 
-
-5. Calling the information in python app to display to front end. 
-
-6. Plotting the information using JS and D3. 

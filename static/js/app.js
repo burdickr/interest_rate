@@ -227,7 +227,7 @@ function returnData(e) {
           .attr("x", (d, i) => xScale2(X_Axis_Date_Data2[i]))
           .attr("y", chartHeight2)
           .transition()
-          //.duration(2000)
+          .duration(2000)
           .ease(d3.easeExp)
           .attr("y", d => yScale2(d))
           .attr("width", xScale2.bandwidth())
